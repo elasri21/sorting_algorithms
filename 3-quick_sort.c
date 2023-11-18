@@ -28,25 +28,24 @@ size_t portion(int *array, size_t size, int lb, int ub)
 int i, j;
 int pivot;
 pivot = array[ub];
-i = lb - 1;
-for (j = lb; j <= ub - 1; j++)
+for (i = j = lb; j < ub; j++)
 {
 if (array[j] < pivot)
 {
+if (i < j)
+{
+swapping(&array[j], &array[i]);
+print_array(array, size);
+}
 i++;
-if (j > i)
+}
+}
+if (array[i] > pivot)
 {
-swapping(&array[i], &array[j]);
+swapping(&array[i], &array[ub]);
 print_array(array, size);
 }
-}
-}
-if (array[i + 1] > pivot)
-{
-swapping(&array[i + 1], &array[ub]);
-print_array(array, size);
-}
-return (i + 1);
+return (i);
 }
 
 /**
