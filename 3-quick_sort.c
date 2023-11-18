@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "sort.h"
-
 /**
  * swapping - swap two elements in an array
  * @prev: previous element
@@ -26,7 +25,8 @@ int tmp = *prev;
  */
 size_t portion(int *array, size_t size, int lb, int ub)
 {
-int i, j, pivot;
+int i, j;
+int pivot;
 pivot = array[ub];
 i = lb - 1;
 for (j = lb; j <= ub - 1; j++)
@@ -41,10 +41,13 @@ print_array(array, size);
 }
 }
 }
-if (array[i] > pivot)
+if (array[lb] > pivot)
+{
+if (i < lb)
 {
 swapping(&array[i + 1], &array[ub]);
 print_array(array, size);
+}
 }
 return (i + 1);
 }
@@ -77,7 +80,7 @@ do_it_again(array, size, pos + 1, ub);
  */
 void quick_sort(int *array, size_t size)
 {
-if (size <= 1)
+if (!array || size <= 1)
 return;
 do_it_again(array, size, 0, size - 1);
 }
