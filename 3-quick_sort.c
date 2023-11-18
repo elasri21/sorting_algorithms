@@ -33,21 +33,18 @@ for (j = lb; j <= ub - 1; j++)
 {
 if (array[j] < pivot)
 {
-if (i < j)
-{
 i++;
+if (j > i)
+{
 swapping(&array[i], &array[j]);
 print_array(array, size);
 }
 }
 }
-if (array[lb] > pivot)
-{
-if (i < lb)
+if (array[j] <= pivot)
 {
 swapping(&array[i + 1], &array[ub]);
 print_array(array, size);
-}
 }
 return (i + 1);
 }
