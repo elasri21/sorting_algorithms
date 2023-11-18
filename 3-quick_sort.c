@@ -41,7 +41,7 @@ print_array(array, size);
 }
 }
 }
-if (array[j] <= pivot)
+if (array[i + 1] > pivot)
 {
 swapping(&array[i + 1], &array[ub]);
 print_array(array, size);
