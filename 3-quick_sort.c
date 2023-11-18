@@ -76,7 +76,7 @@ do_it_again(array, size, pos + 1, ub);
  */
 void quick_sort(int *array, size_t size)
 {
-if (size < 2)
+if (array == NULL || size < 2)
 return;
 do_it_again(array, size, 0, size - 1);
 }
