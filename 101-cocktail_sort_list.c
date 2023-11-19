@@ -46,7 +46,7 @@ else
 *tail = tmp;
 tmp->next = (*blinder)->next;
 (*blinder)->prev = tmp->prev;
-if (tmp->prev !=NULL)
+if (tmp->prev != NULL)
 tmp->prev->next = *blinder;
 else
 *list = *blinder;
