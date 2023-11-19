@@ -36,7 +36,7 @@ int *count_arr, *sorted_arr;
 if (array == NULL || size < 2)
 return;
 new_size = max_num(array, size);
-if (new_size == 0)
+if (new_size <= 0)
 return;
 count_arr = (int *)malloc(sizeof(int) * (new_size + 1));
 if (count_arr == NULL)
