@@ -4,21 +4,6 @@
 #include <stddef.h>
 
 /**
- * create_array - creates an array
- * @size: size of array
- * Return: array
- */
-size_t *create_array(size_t size)
-{
-size_t i;
-size_t *array = (size_t *)malloc(sizeof(size_t) * size);
-if (array == NULL)
-return (NULL);
-for (i = 0; i < size; i++)
-array[i] = i;
-return (array);
-}
-/**
  * max_num - get max element in an array
  * @arr: the array
  * @size: array size
@@ -51,6 +36,8 @@ int *count_arr, *sorted_arr;
 if (array == NULL || size < 2)
 return;
 new_size = max_num(array, size);
+if (new_size == 0)
+return;
 count_arr = (int *)malloc(sizeof(int) * (new_size + 1));
 if (count_arr == NULL)
 return;
