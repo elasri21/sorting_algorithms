@@ -36,8 +36,6 @@ int *count_arr, *sorted_arr;
 if (array == NULL || size < 2)
 return;
 new_size = max_num(array, size);
-if (new_size <= 0)
-return;
 count_arr = (int *)malloc(sizeof(int) * (new_size + 1));
 if (count_arr == NULL)
 return;
@@ -56,7 +54,10 @@ count_arr[j] = count_arr[j] + count_arr[i];
 print_array((const int *)count_arr, new_size + 1);
 sorted_arr = (int *)malloc(sizeof(int) * size);
 if (sorted_arr == NULL)
+{
+free(count_arr);
 return;
+}
 for (i = 0; i < size; i++)
 {
 for (j = 0; j <= new_size + 1; j++)
