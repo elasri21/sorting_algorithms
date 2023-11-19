@@ -12,6 +12,8 @@
 
 void counting_sort(int *array, size_t size)
 {
+if (array == NULL || size < 2)
+return;
 size_t i, j, new_size = array[0], *new_arr;
 int *count_arr, *sorted_arr;
 for (i = 0; i < size; i++)
