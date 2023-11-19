@@ -9,15 +9,13 @@
  * @size: array size
  * Return: the max number in an array
  */
-size_t max_num(int *arr, size_t size)
+int  max_num(int *arr, size_t size)
 {
-size_t i, max_num;
-if (arr == NULL)
-return (0);
-max_num = arr[0];
-for (i = 0; i < size; i++)
+size_t i;
+int max_num;
+for (max_num = arr[0], i = 1; i < size; i++)
 {
-if ((size_t)arr[i] > max_num)
+if (arr[i] > max_num)
 max_num = arr[i];
 }
 return (max_num);
