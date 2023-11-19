@@ -46,14 +46,11 @@ return (max_num);
 
 void counting_sort(int *array, size_t size)
 {
-size_t i, j, new_size, *new_arr;
+size_t i, j, new_size;
 int *count_arr, *sorted_arr;
 if (array == NULL || size < 2)
 return;
 new_size = max_num(array, size);
-new_arr = create_array(new_size + 1);
-if (new_arr == NULL)
-return;
 count_arr = (int *)malloc(sizeof(int) * (new_size + 1));
 if (count_arr == NULL)
 return;
@@ -86,7 +83,6 @@ count_arr[j] = count_arr[j] - 1;
 }
 for (i = 0; i < size; i++)
 array[i] = sorted_arr[i];
-free(new_arr);
 free(count_arr);
 free(sorted_arr);
 }
