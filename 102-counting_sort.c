@@ -19,6 +19,25 @@ array[i] = i;
 return (array);
 }
 /**
+ * max_num - get max element in an array
+ * @arr: the array
+ * @size: array size
+ * Return: the max number in an array
+ */
+size_t max_num(int *arr, size_t size)
+{
+size_t i, max_num;
+if (arr == NULL)
+return (0);
+max_num = arr[0];
+for (i = 0; i < size; i++)
+{
+if ((size_t)arr[i] > max_num)
+max_num = arr[i];
+}
+return (max_num);
+}
+/**
  * counting_sort - sorts an array using counting sort
  * @array: array to be sorted
  * @size: size of the array
@@ -27,15 +46,11 @@ return (array);
 
 void counting_sort(int *array, size_t size)
 {
-size_t i, j, new_size = array[0], *new_arr;
+size_t i, j, new_size, *new_arr;
 int *count_arr, *sorted_arr;
 if (array == NULL || size < 2)
 return;
-for (i = 0; i < size; i++)
-{
-if ((size_t)array[i] > new_size)
-new_size = array[i];
-}
+new_size = max_num(array, size);
 new_arr = create_array(new_size + 1);
 if (new_arr == NULL)
 return;
