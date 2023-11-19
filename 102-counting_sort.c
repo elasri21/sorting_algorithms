@@ -52,14 +52,8 @@ count_arr[j] = count_arr[j] + count_arr[i];
 print_array((const int *)count_arr, new_size + 1);
 for (i = 0; i < size; i++)
 {
-for (j = 0; j <= new_size + 1; j++)
-{
-if ((size_t)array[i] == j + 1)
-{
-sorted_arr[count_arr[j]] = array[i];
-count_arr[j] = count_arr[j] - 1;
-}
-}
+sorted_arr[count_arr[array[i]] - 1] = array[i];
+count_arr[array[i]] -= 1;
 }
 for (i = 0; i < size; i++)
 array[i] = sorted_arr[i];
