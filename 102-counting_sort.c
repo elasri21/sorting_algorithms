@@ -35,7 +35,7 @@ count_arr[i] = count_arr[i] + 1;
 }
 for (i = 0, j = 1; j <= new_size; i++, j++)
 count_arr[j] = count_arr[j] + count_arr[i];
-print_array((const int *)count_arr, new_size + 1);
+print_array(count_arr, new_size + 1);
 sorted_arr = (int *)malloc(sizeof(int) * size);
 for (i = 0; i < size; i++)
 {
