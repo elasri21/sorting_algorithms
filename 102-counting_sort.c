@@ -12,8 +12,8 @@
 
 void counting_sort(int *array, size_t size)
 {
-size_t i, j, new_size = array[0], *new_arr, *count_arr;
-int *sorted_arr;
+size_t i, j, new_size = array[0], *new_arr;
+int *count_arr, *sorted_arr;
 for (i = 0; i < size; i++)
 {
 if ((size_t)array[i] > new_size)
@@ -22,7 +22,7 @@ new_size = array[i];
 new_arr = (size_t *)malloc(sizeof(size_t) * (new_size + 1));
 for (i = 0; i <= new_size; i++)
 new_arr[i] = i;
-count_arr = (size_t *)malloc(sizeof(size_t) * (new_size + 1));
+count_arr = (int *)malloc(sizeof(int) * (new_size + 1));
 for (i = 0; i <= new_size; i++)
 count_arr[i] = 0;
 for (i = 0; i <= new_size; i++)
@@ -35,7 +35,7 @@ count_arr[i] = count_arr[i] + 1;
 }
 for (i = 0, j = 1; j <= new_size; i++, j++)
 count_arr[j] = count_arr[j] + count_arr[i];
-print_array(count_arr, new_size + 1);
+print_array((const int *)count_arr, new_size + 1);
 sorted_arr = (int *)malloc(sizeof(int) * size);
 for (i = 0; i < size; i++)
 {
