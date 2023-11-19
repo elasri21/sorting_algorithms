@@ -39,14 +39,8 @@ if (count_arr == NULL)
 return;
 for (i = 0; i <= new_size; i++)
 count_arr[i] = 0;
-for (i = 0; i <= new_size; i++)
-{
-for (j = 0; j < size; j++)
-{
-if ((size_t)array[j] == i)
-count_arr[i] = count_arr[i] + 1;
-}
-}
+for (i = 0; i < size; i++)
+count_arr[array[i]] += 1;
 for (i = 0, j = 1; j <= new_size; i++, j++)
 count_arr[j] = count_arr[j] + count_arr[i];
 print_array((const int *)count_arr, new_size + 1);
