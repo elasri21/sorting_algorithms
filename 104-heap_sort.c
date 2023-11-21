@@ -54,7 +54,7 @@ if (array == NULL || size < 2)
 return;
 for (i = (size / 2) - 1; i >= 0; i--)
 heapping(array, size, size, i);
-for (i = size - 1; i >= 0; i--)
+for (i = size - 1; i > 0; i--)
 {
 swapping(array, array + i);
 print_array(array, size);
