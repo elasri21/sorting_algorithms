@@ -32,7 +32,7 @@ void sort_places(int *arr, size_t size, int place, int *sorted)
 {
 int counter[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 size_t i;
-for (i = 0; i < 10; i++)
+for (i = 0; i < size; i++)
 counter[(arr[i] / place) % 10] += 1;
 for (i = 0; i < 10; i++)
 counter[i] += counter[i - 1];
