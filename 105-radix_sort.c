@@ -12,7 +12,7 @@
 int max_num(int *arr, int size)
 {
 int max_n, i;
-for (i = 1, max_n = arr[0]; i < size; i++)
+for (max_n = arr[0], i = 1; i < size; i++)
 {
 if (arr[i] > max_n)
 max_n = arr[i];
@@ -34,7 +34,7 @@ int counter[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 size_t i;
 for (i = 0; i < size; i++)
 counter[(arr[i] / place) % 10] += 1;
-for (i = 0; i < 10; i++)
+for (i = 0; i < size; i++)
 counter[i] += counter[i - 1];
 for (i = size - 1; (int)i >= 0; i--)
 {
@@ -60,7 +60,7 @@ sorted = (int *)malloc(sizeof(int) * size);
 if (sorted == NULL)
 return;
 big = max_num(array, size);
-for (place = 1; big / place > 0; place *= size)
+for (place = 1; big / place > 0; place *= 10)
 {
 sort_places(array, size, place, sorted);
 print_array(array, size);
