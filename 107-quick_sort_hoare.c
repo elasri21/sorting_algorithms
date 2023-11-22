@@ -54,7 +54,7 @@ return (i);
 void quick(int *arr, size_t size, int lb, int ub)
 {
 int sample;
-if (ub > lb + 1)
+if (ub > lb)
 {
 sample = portion(arr, size, lb, ub);
 quick(arr, size, lb, sample - 1);
