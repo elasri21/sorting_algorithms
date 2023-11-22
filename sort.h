@@ -1,6 +1,9 @@
 #ifndef SORT_H
 #define SORT_H
 
+#define TOP 0
+#define BOTTOM 1
+
 /**
  * struct listint_s - Doubly linked list node
  *
@@ -28,5 +31,6 @@ void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
+void bitonic_sort(int *array, size_t size);
 
 #endif
