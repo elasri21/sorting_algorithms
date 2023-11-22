@@ -53,7 +53,7 @@ merging(arr, size, beg + step, step, dir);
 void convertor(int *arr, size_t size, size_t beg, size_t portion, char dir)
 {
 size_t step = portion / 2;
-char *dir_name = (dir == TOP) ? "TOP" : "BOTTOM";
+char *dir_name = (dir == TOP) ? "UP" : "DOWN";
 if (portion > 1)
 {
 printf("Merging [%lu/%lu] (%s):\n", portion, size, dir_name);
